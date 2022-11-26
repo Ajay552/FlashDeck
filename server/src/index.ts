@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
-import DeckModel from './models/Deck';
+import Deck from './models/Deck';
 
 const PORT = 5000;
 
@@ -12,9 +12,17 @@ app.get('/', (req: Request, res: Response) => {
     res.send("hello World!");
 });
 
+app.post("/decks", async (req: Request, res: Response) => {
+    const newDeck = new Deck({
+        title: "Flash card deck",
+    });
+    const createdDeck = await newDeck.save();
+    res.json(createdDeck);
+})
+
 mongoose.connect(
     'mongodb+srv://nova:OnePiece@cluster0.cpxrfgs.mongodb.net/?retryWrites=true&w=majority'
-    ).then(() => {
-        console.log(`listening to port ${PORT}`);
-        app.listen(PORT);
-    })
+).then(() => {
+    console.log(`listening to port ${PORT}`);
+    app.listen(PORT);
+})
