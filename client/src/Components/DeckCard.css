@@ -1,0 +1,16 @@
+.deck {
+    height: 100px;
+    border: 1px solid white;
+    background: white;
+    border-radius: 10px;
+}
+
+.CloseButton {
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.deckTitle {
+    text-align: center;
+}

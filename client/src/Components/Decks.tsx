@@ -1,5 +1,6 @@
 import { DECK } from "../models/DeckType";
 import DeckCard from "./DeckCard";
+import "./Decks.css";
 
 interface OwnProps {
 	decks: DECK[];
@@ -14,7 +15,8 @@ const Decks = (props: OwnProps) => {
 					return (
 						<DeckCard
 							title={deck.title}
-							key={deck._id} />
+							key={deck._id}
+						/>
 					)
 				})
 			}

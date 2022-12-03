@@ -4,19 +4,3 @@
   padding: 2rem;
   text-align: center;
 }
-
-.decks {
-  display: grid;
-  width: 600px;
-  margin: 0 auto;
-  grid-template-columns: repeat(3,1fr);
-  gap: 10px;
-  color: black;
-}
-
-.deck {
-  height: 100px;
-  border: 1px solid white;
-  background: white;
-  border-radius: 10px;
-}

@@ -1,0 +1,8 @@
+.decks {
+    display: grid;
+    width: 600px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    color: black;
+  }
