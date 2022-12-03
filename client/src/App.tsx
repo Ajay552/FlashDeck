@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createDeck, fetchAllDecks } from './api/DecksApi';
 import './App.css'
 import CreateDeck from './Components/CreateDeck';
 import Decks from './Components/Decks';
@@ -11,23 +12,13 @@ function App() {
 
   const handelCreateDeck = async (evt: React.FormEvent) => {
     evt.preventDefault();
-    const res = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({
-        title,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      }
-    });
-
-    if (res.status === 200) setTitle("");
+    createDeck(title);
+    setTitle("");
   }
 
   const getAllDecks = async () => {
     try {
-      const response = await fetch(url);
-      const decks = await response.json();
+      const decks = await fetchAllDecks();
       setDecks(decks);
     } catch (err) {
       console.log(err);
