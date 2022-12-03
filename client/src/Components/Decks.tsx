@@ -15,6 +15,7 @@ const Decks = (props: OwnProps) => {
 					return (
 						<DeckCard
 							title={deck.title}
+							deckId={deck._id}
 							key={deck._id}
 						/>
 					)
