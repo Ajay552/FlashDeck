@@ -1,6 +1,5 @@
 import { DECK } from "../models/DeckType";
-
-const BASE_URL = "https://ajay552-humble-broccoli-rwq979w4q993ww9p-5000.preview.app.github.dev";
+import { BASE_URL } from "./config";
 
 export const createDeck = async (title: string) => {
   const res = await fetch(`${BASE_URL}/decks/`, {
